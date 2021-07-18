@@ -1,0 +1,58 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "c0580e88639233d64464b9607839a456",
+    "entities": [
+      {
+        "tableName": "vehicules",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`vehiculeId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `price` TEXT, `category` TEXT, `image` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "vehiculeId",
+            "columnName": "vehiculeId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "price",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "image",
+            "columnName": "image",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "vehiculeId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c0580e88639233d64464b9607839a456')"
+    ]
+  }
+}
